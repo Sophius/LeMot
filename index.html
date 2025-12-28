@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title>le mot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Nunito', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              // "le mot" Palette
+              primary: '#4A729A',   // Muted Blue
+              accent: '#D16B58',    // Ginger/Terracotta
+              dark: '#2D3748',      // Deep Grey
+              light: '#A0AEC0',     // Light Grey
+              success: '#48BB78',   // Green
+              bgLight: '#F7F7F9',   // Very light grey background
+            },
+            animation: {
+              'slide-up': 'slideUp 0.3s ease-out',
+              'fade-in': 'fadeIn 0.2s ease-out',
+            },
+            keyframes: {
+              slideUp: {
+                '0%': { transform: 'translateY(10px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      html, body {
+        height: 100%;
+        width: 100%;
+        overflow: hidden; /* Prevent body scroll */
+        overscroll-behavior: none; /* Prevent pull-to-refresh */
+        -webkit-tap-highlight-color: transparent;
+        user-select: none; /* Prevent text selection */
+      }
+      
+      body {
+        font-family: 'Nunito', sans-serif;
+        background-color: #F7F7F9;
+        color: #2D3748;
+      }
+
+      /* Allow text selection in inputs */
+      input, textarea {
+        user-select: text;
+        font-size: 16px !important; /* Prevent iOS zoom */
+      }
+
+      /* Custom Scrollbar for hidden feel */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(160, 174, 192, 0.3);
+        border-radius: 3px;
+      }
+
+      /* Subtle Grid */
+      .bg-grid {
+        background-image: 
+          linear-gradient(to right, rgba(74, 114, 154, 0.05) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(74, 114, 154, 0.05) 1px, transparent 1px);
+        background-size: 20px 20px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "mammoth": "https://esm.sh/mammoth@1.8.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-grid">
+    <div id="root"></div>
+  </body>
+</html>
